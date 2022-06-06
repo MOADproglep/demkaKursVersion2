@@ -1,0 +1,117 @@
+﻿<Page x:Class="demkaKursVersion2.All_Page.OtherTables_Page"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:demkaKursVersion2.All_Page"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="OtherTables_Page" IsVisibleChanged="Page_IsVisibleChanged">
+
+    <Grid>
+        <TabControl x:Name="TabControl_OtherTable">
+            <TabItem Header="Типы спорта">
+                <DataGrid AutoGenerateColumns="False" IsReadOnly="True" x:Name="TypesSportsGrid">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Binding="{Binding Name}" Header="Название" Width="*"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </TabItem>
+
+            <TabItem Header="Категории спорта">
+                <DataGrid AutoGenerateColumns="False" IsReadOnly="True" x:Name="CategoriesSportsGrid">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Binding="{Binding Name}" Header="Название" Width="*"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </TabItem>
+
+            <TabItem Header="Зарегестрированные города">
+                <DataGrid AutoGenerateColumns="False" IsReadOnly="True" x:Name="CitysGrid">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Binding="{Binding Name}" Header="Название" Width="*"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </TabItem>
+
+            <TabItem Header="Инфраструктура">
+                <DataGrid AutoGenerateColumns="False" IsReadOnly="True" x:Name="InfrastructureGrid">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Binding="{Binding TypeStructure.Name}" Header="Тип структуры" Width="*"/>
+                        <DataGridTextColumn Binding="{Binding Citys.Name}" Header="Город" Width="*"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </TabItem>
+
+            <TabItem Header="Организаторы">
+                <DataGrid AutoGenerateColumns="False" IsReadOnly="True" x:Name="OrganizersGrid">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Binding="{Binding Name}" Header="Название" Width="*"/>
+                        <DataGridTextColumn Binding="{Binding Citys.Name}" Header="Город базирования" Width="*"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </TabItem>
+
+            <TabItem Header="Регистрации на соревнования">
+                <DataGrid AutoGenerateColumns="False" IsReadOnly="True" x:Name="RegistrationCompetitionGrid">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Binding="{Binding ID_Competitions}" Header="Номер соревнования" Width="*"/>
+                        <DataGridTextColumn Binding="{Binding CategoriesSports.Name}" Header="Категория спорта" Width="*"/>
+                        <DataGridTextColumn Binding="{Binding Sportsmen.Surname}" Header="Фамилия" Width="*"/>
+                        <DataGridTextColumn Binding="{Binding Sportsmen.Name}" Header="Имя" Width="*"/>
+                        <DataGridTextColumn Binding="{Binding ID_Trainer}" Header="Номер тренера" Width="*"/>
+                        <DataGridTextColumn Binding="{Binding DataRegistration, StringFormat=M/d/yyyy}" Header="Дата регистрации" Width="*"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </TabItem>
+
+            <TabItem Header="Характеристики">
+                <DataGrid AutoGenerateColumns="False" IsReadOnly="True" x:Name="SpecificationsGrid">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Binding="{Binding Name}" Header="Название" Width="*"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </TabItem>
+
+            <TabItem Header="Характеристики инфраструктур">
+                <DataGrid AutoGenerateColumns="False" IsReadOnly="True" x:Name="SpecificationsInfrastructureGrid">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Binding="{Binding ID_Infrastructure}" Header="Номер инфраструктуры" Width="140"/>
+                        <DataGridTextColumn Binding="{Binding Specifications.Name}" Header="Характеристика" Width="*"/>
+                        <DataGridTextColumn Binding="{Binding Value}" Header="Занчение" Width="*"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </TabItem>
+
+            <TabItem Header="Назначение тренеров">
+                <DataGrid AutoGenerateColumns="False" IsReadOnly="True" x:Name="TrainerSportsmenGrid">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Binding="{Binding Trainer.Surname}" Header="Фамилия тренера" Width="*"/>
+                        <DataGridTextColumn Binding="{Binding Trainer.Name}" Header="Имя тренера" Width="*"/>
+                        <DataGridTextColumn Binding="{Binding Sportsmen.Surname}" Header="Фамилия спортсмена" Width="*"/>
+                        <DataGridTextColumn Binding="{Binding Sportsmen.Name}" Header="Имя спортсмена" Width="*"/>
+                        <DataGridTextColumn Binding="{Binding TypesSports.Name}" Header="Тип спорта" Width="*"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </TabItem>
+
+            <TabItem Header="Типы спорта спортсменов">
+                <DataGrid AutoGenerateColumns="False" IsReadOnly="True" x:Name="TypesSports_SportsmenGrid">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Binding="{Binding Sportsmen.Surname}" Header="Фамилия" Width="*"/>
+                        <DataGridTextColumn Binding="{Binding Sportsmen.Name}" Header="Имя" Width="*"/>
+                        <DataGridTextColumn Binding="{Binding Class}" Header="Разряд" Width="*"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </TabItem>
+            
+            <TabItem Header="Тип структуры">
+                <DataGrid AutoGenerateColumns="False" IsReadOnly="True" x:Name="TypeStructureGrid">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Binding="{Binding Name}" Header="Название" Width="*"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Page>

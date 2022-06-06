@@ -1,0 +1,99 @@
+﻿<Page x:Class="demkaKursVersion2.All_Page.MainTables_Page"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:demkaKursVersion2.All_Page"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="MainTables_Page" IsVisibleChanged="Page_IsVisibleChanged">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
+        <Button Content="Добавить" Name="BtnAdd" Click="BtnAdd_Click" Grid.Row="1" Width="100" Margin="3" HorizontalAlignment="Left"/>
+        <Button Content="Удалить" Name="BtnDelete" Click="BtnDelete_Click" Grid.Row="1" Width="100" Margin="108,3,0,3" HorizontalAlignment="Left"/>
+        <TextBlock Text="Дополнительно" Foreground="Black" Name="TB_ShowOthertable" PreviewMouseDown="TB_ShowOthertable_PreviewMouseDown" Grid.Row="1" Width="auto" Margin="213,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" />
+
+        <TabControl x:Name="TabControl_MainTable">
+            <TabItem Name="tabCompetition" Header="Соревнования">
+                <DataGrid AutoGenerateColumns="False" IsReadOnly="True" x:Name="CompetitionsGrid">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Binding="{Binding Organizers.Name}" Header="Организатор" Width="85"/>
+                        <DataGridTextColumn Binding="{Binding StartDate, StringFormat=M/d/yyyy}" Header="Дата начала" Width="100"/>
+                        <DataGridTextColumn Binding="{Binding EndDate, StringFormat=M/d/yyyy}" Header="Дата окончания" Width="100"/>
+                        <DataGridTextColumn Binding="{Binding Infrastructure.TypeStructure.Name}" Header="Инфраструктура" Width="110"/>
+                        <DataGridTextColumn Binding="{Binding TypesSports.Name}" Header="Тип спорта соревнования" Width="155"/>
+
+                        <DataGridTemplateColumn Width="auto">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Content="Редактирование" Name="BtnEditCompetition" Click="BtnEditCompetition_Click"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </TabItem>
+
+            <TabItem Name="tabSportsman" Header="Спортсмены">
+                <DataGrid AutoGenerateColumns="False" IsReadOnly="True" x:Name="SportsmenGrid" >
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Binding="{Binding Surname}" Header="Фамилия" Width="85"/>
+                        <DataGridTextColumn Binding="{Binding Name}" Header="Имя" Width="100"/>
+                        <DataGridTextColumn Binding="{Binding Patronymic}" Header="Отчество" Width="100"/>
+                        <DataGridTextColumn Binding="{Binding Date_birhtday, StringFormat=M/d/yyyy}" Header="Дата рождения" Width="110"/>
+                        <DataGridTextColumn Binding="{Binding SportClub.Name}" Header="Спортивный клуб" Width="155"/>
+
+                        <DataGridTemplateColumn Width="auto">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Content="Редактирование" Name="BtnEditSportsman" Click="BtnEditSportsman_Click"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </TabItem>
+
+            <TabItem Name="tabTrainers" Header="Тренера">
+                <DataGrid AutoGenerateColumns="False" IsReadOnly="True" x:Name="TrainerGrid" >
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Binding="{Binding Surname}" Header="Фамилия" Width="85"/>
+                        <DataGridTextColumn Binding="{Binding Name}" Header="Имя" Width="100"/>
+                        <DataGridTextColumn Binding="{Binding Patronymic}" Header="Отчество" Width="100"/>
+                        <DataGridTextColumn Binding="{Binding Date_birhtday, StringFormat=M/d/yyyy}" Header="Дата рождения" Width="110"/>
+                        <DataGridTextColumn Binding="{Binding Class}" Header="Разряд" Width="155"/>
+
+                        <DataGridTemplateColumn Width="auto">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Content="Редактирование" Name="BtnEditTrainers" Click="BtnEditTrainers_Click"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </TabItem>
+
+            <TabItem Name="tabSpotrClub" Header="Спортивный клуб">
+                <DataGrid AutoGenerateColumns="False" IsReadOnly="True" x:Name="SportClubGrid" >
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Binding="{Binding Citys.Name}" Header="Город базирования" Width="120"/>
+                        <DataGridTextColumn Binding="{Binding Name}" Header="Наименование" Width="100"/>
+
+                        <DataGridTemplateColumn Width="auto">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Content="Редактирование" Name="BtnEditSpotrClub" Click="BtnEditSpotrClub_Click"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Page>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="463ebdee864848d88f3c4c7965be2eb8" Name="Diagram1">
+        <EntityTypeShape EntityType="demkaItogKursModel.Awarding" Width="1.5" PointX="12.75" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="demkaItogKursModel.CategoriesSports" Width="1.5" PointX="0.75" PointY="17.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="demkaItogKursModel.Citys" Width="1.5" PointX="0.75" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="demkaItogKursModel.Competitions" Width="1.5" PointX="5.25" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="demkaItogKursModel.Infrastructure" Width="1.5" PointX="3" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="demkaItogKursModel.Organizers" Width="1.5" PointX="3" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="demkaItogKursModel.RegistrationCompetition" Width="1.5" PointX="10.5" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="demkaItogKursModel.Specifications" Width="1.5" PointX="1.5" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="demkaItogKursModel.SpecificationsInfrastructure" Width="1.5" PointX="5.25" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="demkaItogKursModel.SportClub" Width="1.5" PointX="3" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="demkaItogKursModel.Sportsmen" Width="1.5" PointX="5.25" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="demkaItogKursModel.sysdiagrams" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="demkaItogKursModel.Trainer" Width="1.5" PointX="8.25" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="demkaItogKursModel.TrainerSportsmen" Width="1.5" PointX="7.5" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="demkaItogKursModel.TypesSports" Width="1.5" PointX="3" PointY="17.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="demkaItogKursModel.TypesSports_Sportsmen" Width="1.5" PointX="7.5" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="demkaItogKursModel.TypeStructure" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <AssociationConnector Association="demkaItogKursModel.FK_Awarding_RegistrationCompetition" ManuallyRouted="false" />
+        <AssociationConnector Association="demkaItogKursModel.FK_RegistrationCompetition_CategoriesSports" ManuallyRouted="false" />
+        <AssociationConnector Association="demkaItogKursModel.FK_Infrastructure_Citys" ManuallyRouted="false" />
+        <AssociationConnector Association="demkaItogKursModel.FK_Organizers_Citys" ManuallyRouted="false" />
+        <AssociationConnector Association="demkaItogKursModel.FK_SportClub_Citys" ManuallyRouted="false" />
+        <AssociationConnector Association="demkaItogKursModel.FK_Competitions_Infrastructure" ManuallyRouted="false" />
+        <AssociationConnector Association="demkaItogKursModel.FK_Competitions_Organizers" ManuallyRouted="false" />
+        <AssociationConnector Association="demkaItogKursModel.FK_Competitions_TypesSports" ManuallyRouted="false" />
+        <AssociationConnector Association="demkaItogKursModel.FK_RegistrationCompetition_Competitions" ManuallyRouted="false" />
+        <AssociationConnector Association="demkaItogKursModel.FK_Infrastructure_TypeStructure" ManuallyRouted="false" />
+        <AssociationConnector Association="demkaItogKursModel.FK_SpecificationsInfrastructure_Infrastructure" ManuallyRouted="false" />
+        <AssociationConnector Association="demkaItogKursModel.FK_RegistrationCompetition_Sportsmen" ManuallyRouted="false" />
+        <AssociationConnector Association="demkaItogKursModel.FK_RegistrationCompetition_Trainer" ManuallyRouted="false" />
+        <AssociationConnector Association="demkaItogKursModel.FK_SpecificationsInfrastructure_Specifications" ManuallyRouted="false" />
+        <AssociationConnector Association="demkaItogKursModel.FK_Sportsmen_SportClub" ManuallyRouted="false" />
+        <AssociationConnector Association="demkaItogKursModel.FK_TrainerSportsmen_Sportsmen" ManuallyRouted="false" />
+        <AssociationConnector Association="demkaItogKursModel.FK_TypesSports_Sportsmen_Sportsmen" ManuallyRouted="false" />
+        <AssociationConnector Association="demkaItogKursModel.FK_TrainerSportsmen_Trainer" ManuallyRouted="false" />
+        <AssociationConnector Association="demkaItogKursModel.FK_TrainerSportsmen_TypesSports" ManuallyRouted="false" />
+        <AssociationConnector Association="demkaItogKursModel.FK_TypesSports_Sportsmen_TypesSports" ManuallyRouted="false" />
+        <AssociationConnector Association="demkaItogKursModel.CategoriesSports_TypesSports" ManuallyRouted="false" />
+        <AssociationConnector Association="demkaItogKursModel.Specification_StypeStructure" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

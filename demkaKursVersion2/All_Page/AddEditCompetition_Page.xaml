@@ -1,0 +1,40 @@
+﻿<Page x:Class="demkaKursVersion2.All_Page.AddEditCompetition_Page"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:demkaKursVersion2.All_Page"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AddEditCompetition_Page">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Организатор" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock Text="Дата начала" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock Text="Дата окончания" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock Text="Инфраструктура" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock Text="Тип спорта" Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+        <ComboBox Name="ComBox_Organizer" SelectedValue="{Binding ID_Organizers}" DisplayMemberPath="Organizers.Name" SelectedValuePath="ID" Grid.Column="1" VerticalAlignment="Center" Width="300" />
+        <DatePicker Name="DP_StartDate" SelectedDateFormat="Short" Grid.Row="1" Grid.Column="2" VerticalAlignment="Center" Width="300" />
+        <DatePicker Name="DP_EndDate" SelectedDateFormat="Short" Grid.Row="2" Grid.Column="2" VerticalAlignment="Center" Width="300" />
+        <ComboBox Name="ComBox_Infrastructure" SelectedValue="{Binding ID_Infrastructure}" DisplayMemberPath="Infrastructure.TypeStructure.Name" SelectedValuePath="ID" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" Width="300"/>
+        <ComboBox Name="ComBox_TypeSports" SelectedValue="{Binding ID_TypesSports}" DisplayMemberPath="TypesSports.Name" SelectedValuePath="ID" Grid.Row="4" Grid.Column="1" VerticalAlignment="Center" Width="300"/>
+        
+        
+        <Button Content="Сохранить" Name="BtnSave" Click="BtnSave_Click" Grid.ColumnSpan="2"  Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="30"/>
+    </Grid>
+</Page>

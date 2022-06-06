@@ -1,0 +1,39 @@
+﻿<Page x:Class="demkaKursVersion2.All_Page.AddEditTrainers_Page"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:demkaKursVersion2.All_Page"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AddEditTrainers_Page">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Фамилия" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock Text="Имя" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock Text="Отчество" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock Text="Дата рождения" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock Text="Спортивный клуб" Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+        <TextBox Name="TB_Surname" Text="{Binding Surname}" MaxLength="50" Grid.Row="0" Grid.Column="1" Width="300" VerticalAlignment="Center"/>
+        <TextBox Name="TB_Name" Text="{Binding Name}" MaxLength="50" Grid.Row="1" Grid.Column="1" Width="300" VerticalAlignment="Center"/>
+        <TextBox Name="Patronymic" Text="{Binding Patronymic}" MaxLength="50" Grid.Row="2" Grid.Column="1" Width="300" VerticalAlignment="Center"/>
+        <DatePicker Name="DP_Birthdate" SelectedDateFormat="Short" Grid.Row="3" Grid.Column="2" VerticalAlignment="Center" Width="300" />
+        <ComboBox Name="ComBox_Class" SelectedValue="{Binding Class}" DisplayMemberPath="Class" SelectedValuePath="ID" Grid.Row="4" Grid.Column="1" VerticalAlignment="Center" Width="300"/>
+
+        <Button Content="Сохранить" Name="BtnSave" Click="BtnSave_Click" Grid.ColumnSpan="2"  Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="30"/>
+    </Grid>
+</Page>
